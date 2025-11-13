@@ -688,10 +688,12 @@ button {
 .Plus {
     -webkit-filter: invert(100%);
     filter: invert(100%);
-    transform: scale(1.2);
-    height: 15px;
+    height: 18px;
+    width: 18px;
     position: absolute;
-    right: 14%;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .bottombtn {
@@ -1050,5 +1052,11 @@ a {
     .qtiles {
         height: 85px;
         font-size: 20px;
+    }
+
+    .Plus {
+        right: 40px;
+        height: 20px;
+        width: 20px;
     }
 }
