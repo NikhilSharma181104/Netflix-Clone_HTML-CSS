@@ -603,54 +603,57 @@ button {
 /* Mobile Styles for Reasons Section */
 @media only screen and (max-width: 600px) {
     .foottiles {
-        height: 140px;
+        height: auto;
+        min-height: 80px;
         width: 100%;
         margin: 0;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
         justify-content: space-between;
         padding: 15px;
         box-sizing: border-box;
+        gap: 10px;
     }
 
     .boxcont {
-        width: 70%;
+        width: auto;
+        flex: 1;
         text-align: left;
-        font-size: 15px;
-        left: 15px;
-        top: 15px;
+        font-size: 14px;
+        left: 0;
+        top: 0;
         transform: none;
+        position: relative;
     }
 
     .boximg {
-        height: 45px;
-        position: absolute;
+        height: 40px;
+        width: 40px;
+        position: relative;
+        flex-shrink: 0;
+        top: 0;
+        right: 0;
     }
 
     .bimg1 {
-        top: auto;
-        bottom: 15px;
-        right: 15px;
+        height: 40px;
+        width: 40px;
     }
 
     .bimg2 {
-        top: auto;
-        bottom: 15px;
-        right: 15px;
+        height: 40px;
+        width: 40px;
     }
 
     .bimg3 {
-        height: 40px;
-        top: auto;
-        bottom: 15px;
-        right: 15px;
+        height: 35px;
+        width: 35px;
     }
 
     .bimg4 {
-        height: 40px;
-        top: auto;
-        bottom: 15px;
-        right: 15px;
+        height: 35px;
+        width: 35px;
     }
 }
 
