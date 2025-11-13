@@ -8,15 +8,23 @@
 
 body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(112, 74, 59, 0.9), rgba(0, 0, 0, 1)), url(https://assets.nflxext.com/ffe/siteui/vlv3/158a0e2a-cca4-40f5-86b8-11ea2a281b06/web_collection/IN-en-20241202-TRIFECTA-b3419e13-4d62-4763-9dd8-cd8b9bc0f321_large.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .content {
     box-sizing: border-box;
     height: 13vh;
+    min-height: 80px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 5px 45px;
+    width: 100%;
 }
 
 .logo {
@@ -24,10 +32,9 @@ body {
 }
 
 .right {
-    right: 50px;
-    position: absolute;
     display: flex;
     gap: 12.5px;
+    align-items: center;
 }
 
 select {
@@ -67,6 +74,36 @@ button {
     font-size: 15px;
 }
 
+/* Tablet Styles */
+@media only screen and (max-width: 1024px) {
+    .content {
+        padding: 5px 30px;
+    }
+
+    .herocontent {
+        left: 80px;
+        max-width: 500px;
+    }
+
+    .cont1 {
+        font-size: 45px;
+        line-height: 60px;
+    }
+
+    .area {
+        width: 85%;
+    }
+
+    .area2 {
+        width: 85%;
+    }
+
+    footer {
+        width: 85%;
+    }
+}
+
+/* Mobile Styles */
 @media only screen and (max-width: 600px) {
     .logo {
         height: 30px;
@@ -118,6 +155,8 @@ button {
 .heroposter {
     box-sizing: border-box;
     background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0), rgba(112, 74, 59, 0.774)), url(https://assets.nflxext.com/ffe/siteui/vlv3/158a0e2a-cca4-40f5-86b8-11ea2a281b06/web_collection/IN-en-20241202-TRIFECTA-b3419e13-4d62-4763-9dd8-cd8b9bc0f321_large.jpg);
+    background-size: cover;
+    background-position: center;
     margin: auto;
     width: 94.5%;
     height: 525px;
@@ -208,6 +247,8 @@ button {
     border-radius: 25px;
     text-indent: 20px;
     font-size: large;
+    color: white;
+    box-sizing: border-box;
 }
 
 .getbtn {
@@ -233,6 +274,39 @@ button {
     bottom: 7px;
 }
 
+/* Tablet Styles for Hero */
+@media only screen and (max-width: 1024px) {
+    .heroposter {
+        width: 92%;
+        height: 480px;
+        padding: 25px;
+    }
+
+    .herocontent {
+        top: 320px;
+        left: 100px;
+    }
+
+    .cont1 {
+        font-size: 42px;
+        line-height: 55px;
+    }
+
+    .cont2 {
+        font-size: 18px;
+    }
+
+    .email {
+        width: 320px;
+    }
+
+    .getbtn {
+        width: 150px;
+        height: 48px;
+    }
+}
+
+/* Mobile Styles for Hero */
 @media only screen and (max-width: 600px) {
 
     .hero {
@@ -245,6 +319,8 @@ button {
 
     .heroposter {
         background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0), rgba(112, 74, 59, 0.774)), url(https://assets.nflxext.com/ffe/siteui/vlv3/158a0e2a-cca4-40f5-86b8-11ea2a281b06/web_collection/IN-en-20241202-TRIFECTA-b3419e13-4d62-4763-9dd8-cd8b9bc0f321_large.jpg);
+        width: 90%;
+        height: 450px;
     }
 
     .herocontent {
@@ -257,6 +333,10 @@ button {
     .cont1 {
         font-size: 25px;
         font-weight: 900;
+    }
+
+    .cont2 {
+        font-size: 14px;
     }
 
     .blocks {
@@ -272,10 +352,12 @@ button {
 
     .email-button {
         flex-direction: column;
+        align-items: center;
     }
 
     .email {
         width: 80vw;
+        max-width: 350px;
         height: 50px;
         margin: auto;
     }
@@ -299,10 +381,12 @@ button {
 .area {
     margin: auto;
     width: 78%;
-    height: 985px;
+    height: auto;
+    min-height: 985px;
     color: #ffffff;
     font-weight: 700;
     font-size: 30px;
+    padding-bottom: 50px;
 }
 
 .flex {
@@ -330,20 +414,54 @@ button {
 }
 
 
+/* Tablet Styles for Content Area */
+@media only screen and (max-width: 1024px) {
+    .area {
+        width: 85%;
+    }
+
+    .pad {
+        font-size: 26px;
+    }
+
+    .tiles {
+        min-width: 170px;
+        height: 240px;
+    }
+
+    .foottiles {
+        width: 240px;
+        height: 150px;
+    }
+
+    .boxcont {
+        font-size: 18px;
+        width: 180px;
+    }
+}
+
+/* Mobile Styles for Content Area */
 @media only screen and (max-width: 600px) {
 
     .area {
-        width: 80%;
-        height: 1100px;
+        width: 90%;
+        height: auto;
         box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    .pad {
+        font-size: 20px;
+        margin-bottom: 15px;
     }
 
     .flex {
         display: grid;
-        grid-template-rows: 100px 100px 100px 100px 100px;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        grid-auto-rows: 100px;
         overflow-y: hidden;
-        row-gap: 7.5px;
-        min-height: 500px;
+        gap: 10px;
+        margin-bottom: 30px;
     }
 
     .flex::-webkit-scrollbar {
@@ -354,7 +472,9 @@ button {
     .tiles {
         background-color: #c4c4c4;
         height: 100%;
-        border-radius: 25px;
+        width: 100%;
+        min-width: unset;
+        border-radius: 15px;
     }
 }
 
@@ -398,52 +518,78 @@ button {
     right: -185px;
 }
 
-@media only screen and (max-width: 600px) {
+/* Tablet Styles for Reasons Section */
+@media only screen and (max-width: 1024px) {
     .reasons {
-        display: grid;
-        grid-template-columns: 175px 175px;
-        row-gap: 10px;
-        column-gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .foottiles {
-        height: 150px;
-        width: 160px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile Styles for Reasons Section */
+@media only screen and (max-width: 600px) {
+    .reasons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .foottiles {
+        height: 140px;
+        width: 100%;
+        max-width: 180px;
+        margin: 0;
     }
 
     .boxcont {
-        width: 80%;
+        width: 75%;
         text-align: center;
+        font-size: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .boximg {
+        height: 50px;
     }
 
     .bimg1 {
-        top: 35px;
-        right: -50px;
+        top: 30px;
+        right: 10px;
     }
 
     .bimg2 {
         top: 15px;
-        right: -50px;
+        right: 10px;
     }
 
     .bimg3 {
-        top: 45px;
-        right: -55px;
+        height: 45px;
+        top: 40px;
+        right: 15px;
     }
 
     .bimg4 {
-        top: 27px;
-        right: -55px;
+        height: 45px;
+        top: 25px;
+        right: 15px;
     }
 }
 
 .area2 {
     margin: auto;
     width: 78%;
-    height: 705px;
+    height: auto;
+    min-height: 705px;
     color: #ffffff;
     font-weight: 700;
     font-size: 30px;
+    padding-bottom: 30px;
 }
 
 .qtiles {
@@ -496,9 +642,11 @@ button {
 
 footer {
     color: white;
-    height: 65vh;
+    height: auto;
+    min-height: 65vh;
     width: 78%;
     margin: auto;
+    padding-bottom: 20px;
 }
 
 .query,
@@ -532,36 +680,267 @@ a {
 }
 
 
-@media only screen and (min-width: 6200px) {
-
+/* Tablet Styles for FAQ and Footer */
+@media only screen and (max-width: 1024px) {
     .area2 {
-        box-sizing: border-box;
+        width: 85%;
+        height: auto;
     }
 
-    .questions {
-        max-width: 80%;
+    .qtiles {
+        font-size: 16px;
+        padding-left: 15px;
+    }
+
+    .Plus {
+        right: 10%;
+    }
+
+    footer {
+        width: 85%;
+        height: auto;
+        padding-bottom: 30px;
+    }
+
+    .others {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footblock {
+        width: 200px;
+    }
+}
+
+/* Mobile Styles for FAQ and Footer */
+@media only screen and (max-width: 600px) {
+
+    .area2 {
+        width: 90%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 0 10px;
     }
 
     .pad {
         font-size: 20px;
     }
 
+    .qtiles {
+        font-size: 14px;
+        height: auto;
+        min-height: 65px;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .questions {
+        max-width: 85%;
+        display: block;
+    }
+
+    .Plus {
+        right: 5%;
+        height: 12px;
+    }
+
+    .getbtn2 {
+        width: 130px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .footcontent {
+        font-size: 15px;
+        padding: 0 20px;
+    }
+
     footer {
-        height: 80vh;
+        width: 90%;
+        height: auto;
+        padding-bottom: 30px;
+    }
+
+    .query {
+        font-size: 14px;
     }
 
     .others {
         display: grid;
-        grid-template-columns: 160px 160px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .footblock {
         margin: 15px 0px;
-        height: 130px;
-        width: 235px;
+        height: auto;
+        width: 100%;
+    }
+
+    a {
+        font-size: 13px;
+        line-height: 28px;
     }
 
     .bottom {
         margin-top: 20px;
+    }
+
+    .netin {
+        font-size: 13px;
+    }
+}
+
+
+/* Extra Small Mobile Devices */
+@media only screen and (max-width: 400px) {
+    .logo {
+        height: 25px;
+    }
+
+    select {
+        font-size: 11px;
+        padding: 4px 20px;
+    }
+
+    button {
+        font-size: 11px;
+        padding: 4px 7px;
+    }
+
+    .content {
+        padding: 5px 15px;
+    }
+
+    .heroposter {
+        width: 88%;
+        height: 400px;
+        padding: 20px;
+    }
+
+    .herocontent {
+        top: 55%;
+        left: 8%;
+        max-width: 240px;
+        line-height: 35px;
+    }
+
+    .cont1 {
+        font-size: 22px;
+    }
+
+    .cont2 {
+        font-size: 13px;
+    }
+
+    .footcont {
+        font-size: 12px;
+        max-width: 260px;
+    }
+
+    .email {
+        width: 85vw;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .getbtn {
+        width: 120px;
+        font-size: 16px;
+    }
+
+    .area, .area2 {
+        width: 95%;
+    }
+
+    .pad {
+        font-size: 18px;
+    }
+
+    .tiles {
+        min-width: 120px;
+    }
+
+    .qtiles {
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    footer {
+        width: 95%;
+    }
+
+    .footblock {
+        width: 100%;
+    }
+
+    a {
+        font-size: 12px;
+    }
+}
+
+/* Large Desktop Screens */
+@media only screen and (min-width: 1440px) {
+    .content {
+        padding: 5px 80px;
+    }
+
+    .heroposter {
+        max-width: 1400px;
+        height: 600px;
+    }
+
+    .herocontent {
+        left: 150px;
+        max-width: 650px;
+    }
+
+    .cont1 {
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .cont2 {
+        font-size: 24px;
+    }
+
+    .email {
+        width: 450px;
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .getbtn {
+        width: 180px;
+        height: 60px;
+        font-size: 22px;
+    }
+
+    .area, .area2, footer {
+        max-width: 1400px;
+    }
+
+    .pad {
+        font-size: 36px;
+    }
+
+    .tiles {
+        min-width: 220px;
+        height: 300px;
+    }
+
+    .foottiles {
+        width: 300px;
+        height: 180px;
+    }
+
+    .boxcont {
+        font-size: 22px;
+        width: 220px;
+    }
+
+    .qtiles {
+        height: 85px;
+        font-size: 20px;
     }
 }
