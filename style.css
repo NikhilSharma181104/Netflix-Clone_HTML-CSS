@@ -392,12 +392,29 @@ button {
 .flex {
     display: flex;
     margin-bottom: 50px;
-    overflow: scroll hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 10px;
+    padding-bottom: 5px;
 }
 
 .flex::-webkit-scrollbar {
     background: transparent;
-    max-height: 0px;
+    height: 8px;
+}
+
+.flex::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.flex::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.flex::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .pad {
@@ -409,8 +426,13 @@ button {
     background-color: #c4c4c4;
     height: 260px;
     min-width: 190px;
-    margin-left: 10px;
+    flex-shrink: 0;
     border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.tiles:hover {
+    transform: scale(1.05);
 }
 
 
@@ -424,13 +446,31 @@ button {
         font-size: 26px;
     }
 
+    /* Trending and Only on Netflix */
+    .trending,
+    .onlyonnetflix {
+        gap: 12px;
+    }
+
     .tiles {
-        min-width: 170px;
-        height: 240px;
+        min-width: 160px;
+        height: 220px;
+        margin-left: 0;
+        margin-right: 12px;
+    }
+
+    .tiles:first-child {
+        margin-left: 0;
+    }
+
+    /* More Reasons to Join */
+    .reasons {
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
     .foottiles {
-        width: 240px;
+        width: 230px;
         height: 150px;
     }
 
@@ -455,26 +495,54 @@ button {
         margin-bottom: 15px;
     }
 
-    .flex {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        grid-auto-rows: 100px;
+    /* Trending and Only on Netflix - Horizontal Scroll */
+    .trending,
+    .onlyonnetflix {
+        display: flex;
+        overflow-x: auto;
         overflow-y: hidden;
         gap: 10px;
         margin-bottom: 30px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
     }
 
-    .flex::-webkit-scrollbar {
-        background: transparent;
-        max-height: 0px;
+    .trending::-webkit-scrollbar,
+    .onlyonnetflix::-webkit-scrollbar {
+        height: 6px;
     }
 
-    .tiles {
+    .trending::-webkit-scrollbar-track,
+    .onlyonnetflix::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+
+    .trending::-webkit-scrollbar-thumb,
+    .onlyonnetflix::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+
+    .trending .tiles,
+    .onlyonnetflix .tiles {
         background-color: #c4c4c4;
-        height: 100%;
-        width: 100%;
-        min-width: unset;
-        border-radius: 15px;
+        height: 150px;
+        min-width: 110px;
+        max-width: 110px;
+        flex-shrink: 0;
+        border-radius: 12px;
+        margin-left: 0;
+        scroll-snap-align: start;
+    }
+
+    /* More Reasons to Join - Grid Layout */
+    .reasons {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 30px;
+        overflow: visible;
     }
 }
 
@@ -522,61 +590,66 @@ button {
 @media only screen and (max-width: 1024px) {
     .reasons {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
+        gap: 15px;
     }
 
     .foottiles {
-        margin-bottom: 10px;
+        margin-bottom: 0;
+        margin-right: 0;
     }
 }
 
 /* Mobile Styles for Reasons Section */
 @media only screen and (max-width: 600px) {
-    .reasons {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        justify-items: center;
-    }
-
     .foottiles {
         height: 140px;
         width: 100%;
-        max-width: 180px;
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+        box-sizing: border-box;
     }
 
     .boxcont {
-        width: 75%;
-        text-align: center;
-        font-size: 16px;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 70%;
+        text-align: left;
+        font-size: 15px;
+        left: 15px;
+        top: 15px;
+        transform: none;
     }
 
     .boximg {
-        height: 50px;
+        height: 45px;
+        position: absolute;
     }
 
     .bimg1 {
-        top: 30px;
-        right: 10px;
+        top: auto;
+        bottom: 15px;
+        right: 15px;
     }
 
     .bimg2 {
-        top: 15px;
-        right: 10px;
+        top: auto;
+        bottom: 15px;
+        right: 15px;
     }
 
     .bimg3 {
-        height: 45px;
-        top: 40px;
+        height: 40px;
+        top: auto;
+        bottom: 15px;
         right: 15px;
     }
 
     .bimg4 {
-        height: 45px;
-        top: 25px;
+        height: 40px;
+        top: auto;
+        bottom: 15px;
         right: 15px;
     }
 }
@@ -857,8 +930,21 @@ a {
         font-size: 18px;
     }
 
-    .tiles {
-        min-width: 120px;
+    .trending .tiles,
+    .onlyonnetflix .tiles {
+        min-width: 100px;
+        max-width: 100px;
+        height: 140px;
+    }
+
+    .reasons {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+
+    .foottiles {
+        width: 100%;
+        max-width: 100%;
     }
 
     .qtiles {
