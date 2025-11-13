@@ -431,7 +431,7 @@ button {
 }
 
 .tiles:hover {
-    transform: scale(1.05);
+    transform: scale(0.95);
 }
 
 
@@ -448,7 +448,7 @@ button {
     /* Trending and Only on Netflix */
     .trending,
     .onlyonnetflix {
-        gap: 12px;
+        gap: 0px;
     }
 
     .tiles {
@@ -501,7 +501,7 @@ button {
         display: flex;
         overflow-x: auto;
         overflow-y: hidden;
-        gap: 10px;
+        gap: 0px;
         margin-bottom: 30px;
         padding-bottom: 10px;
         scroll-snap-type: x mandatory;
@@ -535,7 +535,7 @@ button {
         display: grid !important;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         overflow: visible;
         justify-items: stretch;
     }
@@ -674,13 +674,15 @@ button {
     font-weight: 500;
     font-size: large;
     height: 75px;
-    width: 97.5%;
+    width: 100%;
     margin-bottom: 7.5px;
     border-radius: 15px;
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding: 20px 70px 20px 20px;
     border: 1px solid gray;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .Plus {
@@ -765,11 +767,19 @@ a {
 
     .qtiles {
         font-size: 16px;
-        padding-left: 15px;
+        padding: 20px 60px 20px 15px;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .Plus {
-        right: 10%;
+        right: 20px;
+        height: 16px;
+        width: 16px;
+        top: 50%;
+        transform: translateY(-50%) scale(1);
+        position: absolute;
     }
 
     footer {
@@ -796,6 +806,7 @@ a {
         height: auto;
         box-sizing: border-box;
         padding: 0 10px;
+        margin-top: 20px;
     }
 
     .pad {
@@ -806,18 +817,26 @@ a {
         font-size: 14px;
         height: auto;
         min-height: 65px;
-        padding: 15px;
+        padding: 15px 50px 15px 15px;
         margin-bottom: 10px;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .questions {
-        max-width: 85%;
+        max-width: 100%;
         display: block;
+        padding-right: 10px;
     }
 
     .Plus {
-        right: 5%;
-        height: 12px;
+        right: 15px;
+        height: 14px;
+        width: 14px;
+        top: 50%;
+        transform: translateY(-50%) scale(1);
+        position: absolute;
     }
 
     .getbtn2 {
