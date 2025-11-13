@@ -389,7 +389,7 @@ button {
     color: #ffffff;
     font-weight: 700;
     font-size: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     padding-top: 30px;
 }
 
@@ -553,6 +553,13 @@ button {
     width: 260px;
     margin-right: 10px;
     border-radius: 25px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.foottiles:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    transform: translateY(-4px);
 }
 
 .boxcont {
@@ -658,7 +665,7 @@ button {
 }
 
 .area2 {
-    margin: auto;
+    margin: 0 auto;
     width: 78%;
     height: auto;
     min-height: 705px;
@@ -666,6 +673,7 @@ button {
     font-weight: 700;
     font-size: 30px;
     padding-bottom: 30px;
+    padding-top: 20px;
 }
 
 .qtiles {
@@ -683,6 +691,13 @@ button {
     border: 1px solid gray;
     box-sizing: border-box;
     position: relative;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.qtiles:hover {
+    background-color: #3a3a3a;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .Plus {
